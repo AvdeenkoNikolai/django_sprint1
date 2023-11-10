@@ -48,7 +48,7 @@ def index(request):
     return render(request, 'blog/index.html', {'posts': reversed(posts)})
 
 
-def post_detail(request, id):
+def post_id(request, id):
     context = {'post': posts[id]}
     return render(request, 'blog/detail.html', context)
 
