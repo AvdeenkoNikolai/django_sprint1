@@ -53,8 +53,8 @@ def index(request):
 def post_detail(request, id):
     try:
         context = {'post': posts[id]}
-    except id.DoesNotExist:
-        raise Http404("id does not exist")
+    except IndexError:
+        raise Http404('id does not exist')
     return render(request, 'blog/detail.html', context)
 
 
